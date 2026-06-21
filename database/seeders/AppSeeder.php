@@ -38,6 +38,7 @@ class AppSeeder extends Seeder
             ['name' => 'Khitanan', 'slug' => 'khitanan', 'icon' => '☪️'],
             ['name' => 'Ulang Tahun', 'slug' => 'ulang-tahun', 'icon' => '🎂'],
             ['name' => 'Acara Kantor', 'slug' => 'acara-kantor', 'icon' => '🏢'],
+            ['name' => 'Syukuran Pernikahan', 'slug' => 'syukuran-pernikahan', 'icon' => '🕊️'],
         ];
 
         foreach ($categories as $cat) {
