@@ -13,7 +13,7 @@ export default function Welcome({ auth }) {
                         BH
                     </div>
                     <span className="text-2xl font-bold text-navy dark:text-white tracking-tight">
-                        BEYOND <span className="text-primary">HORIZON</span>
+                        BEYOND <span className="text-primary">HORIZON-APP</span>
                     </span>
                 </div>
 
@@ -62,7 +62,7 @@ export default function Welcome({ auth }) {
                             </Link>
                             <button className="flex items-center gap-3 bg-white dark:bg-slate-800 p-2 pr-6 rounded-full shadow-lg border border-slate-100 dark:border-slate-700">
                                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg">
-                                    <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
                                 </div>
                                 <span className="font-semibold text-navy dark:text-white">Lihat Demo</span>
                             </button>
@@ -175,7 +175,7 @@ export default function Welcome({ auth }) {
             <footer className="bg-navy py-12 text-white">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="flex items-center gap-2">
-                         <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
                             BH
                         </div>
                         <span className="text-xl font-bold tracking-tight">BEYOND HORIZON</span>
