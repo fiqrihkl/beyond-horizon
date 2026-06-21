@@ -99,7 +99,7 @@ export default function Welcome({ auth }) {
                             { name: 'Khitanan', icon: '☪️', color: 'bg-green-50 text-green-500' },
                             { name: 'Pernikahan', icon: '💍', color: 'bg-rose-50 text-rose-500' },
                             { name: 'Ulang Tahun', icon: '🎂', color: 'bg-yellow-50 text-yellow-500' },
-                            { name: 'Syukuran Pernikahan', icon: '🕊️', color: 'bg-purple-50 text-purple-500' },
+                            { name: 'Syukuran', icon: '🕊️', color: 'bg-purple-50 text-purple-500' },
                         ].map((cat) => (
                             <div key={cat.name} className="p-8 rounded-[2rem] bg-background-light dark:bg-slate-800/50 shadow-sm hover:shadow-xl transition-all group cursor-pointer border border-transparent hover:border-primary/20">
                                 <div className={`w-16 h-16 mx-auto rounded-2xl ${cat.color} flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>

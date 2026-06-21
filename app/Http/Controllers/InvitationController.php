@@ -111,13 +111,13 @@ class InvitationController extends Controller
                 'category' => 'acara-kantor',
                 'description' => 'Desain formal dan profesional untuk acara kumpul kantor.'
             ],
-            // Syukuran Pernikahan
+            // Syukuran
             [
-                'id' => 'syukuran-pernikahan-modern',
-                'name' => 'Syukuran Pernikahan Modern',
+                'id' => 'syukuran-modern',
+                'name' => 'Syukuran Modern',
                 'preview' => '/images/themes/modern.png',
-                'category' => 'syukuran-pernikahan',
-                'description' => 'Desain elegan untuk acara syukuran pernikahan.'
+                'category' => 'syukuran',
+                'description' => 'Desain elegan untuk acara syukuran.'
             ]
         ];
         return Inertia::render('Invitations/Create', [
