@@ -270,7 +270,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                         className="w-full h-full object-cover opacity-60"
                         alt="Hero Background"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#FAFAFA]"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
                 </div>
 
                 <div className="text-center max-w-3xl mx-auto flex flex-col items-center fade-up opacity-0 translate-y-12 transition-all duration-[1500ms] ease-out">
@@ -471,36 +471,36 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
             )}
 
             {/* RSVP Section */}
-            <section className="py-32 px-6 bg-[#FAFAFA] relative z-10">
+            <section className="py-32 px-6 bg-black relative z-10">
                 <div className="max-w-2xl mx-auto">
                     <div className="text-center mb-16 fade-up opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out">
-                        <span className="uppercase tracking-[0.4em] text-[10px] text-gray-400 pb-2">
+                        <span className="uppercase tracking-[0.4em] text-[10px] text-gray-500 pb-2">
                             Kehadiran
                         </span>
-                        <div className="w-12 h-[1px] bg-gray-300 mx-auto mt-4"></div>
+                        <div className="w-12 h-[1px] bg-gray-700 mx-auto mt-4"></div>
                     </div>
 
                     {!submitted ? (
-                        <form onSubmit={submitRsvp} className="bg-white border border-gray-100 p-10 md:p-16 shadow-sm fade-up opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out delay-100">
+                        <form onSubmit={submitRsvp} className="bg-[#0a0a0a] border border-[#222] p-10 md:p-16 shadow-lg fade-up opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out delay-100">
                             <div className="space-y-10">
                                 <div>
-                                    <label className="block text-[9px] uppercase tracking-[0.2em] text-gray-400 mb-2">Nama Lengkap</label>
+                                    <label className="block text-[9px] uppercase tracking-[0.2em] text-gray-500 mb-2">Nama Lengkap</label>
                                     <input 
                                         type="text" 
                                         required 
                                         value={data.name}
                                         onChange={e => setData('name', e.target.value)}
-                                        className="w-full bg-transparent border-0 border-b border-gray-200 focus:border-[#111] focus:ring-0 px-0 py-2 text-sm transition-colors rounded-none placeholder-gray-300" 
+                                        className="w-full bg-transparent border-0 border-b border-[#333] focus:border-white focus:ring-0 px-0 py-2 text-sm transition-colors rounded-none placeholder-gray-600 text-white" 
                                         placeholder="Tulis nama Anda"
                                     />
                                 </div>
                                 
                                 <div>
-                                    <label className="block text-[9px] uppercase tracking-[0.2em] text-gray-400 mb-2">Konfirmasi</label>
+                                    <label className="block text-[9px] uppercase tracking-[0.2em] text-gray-500 mb-2">Konfirmasi</label>
                                     <select 
                                         value={data.attendance}
                                         onChange={e => setData('attendance', e.target.value)}
-                                        className="w-full bg-transparent border-0 border-b border-gray-200 focus:border-[#111] focus:ring-0 px-0 py-2 text-sm transition-colors rounded-none text-[#111]"
+                                        className="w-full bg-transparent border-0 border-b border-[#333] focus:border-white focus:ring-0 px-0 py-2 text-sm transition-colors rounded-none text-white [&>option]:bg-[#0a0a0a]"
                                     >
                                         <option value="hadir">Ya, Saya akan hadir</option>
                                         <option value="tidak_hadir">Maaf, saya tidak bisa hadir</option>
@@ -508,13 +508,13 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                                 </div>
                                 
                                 <div>
-                                    <label className="block text-[9px] uppercase tracking-[0.2em] text-gray-400 mb-2">Pesan & Doa</label>
+                                    <label className="block text-[9px] uppercase tracking-[0.2em] text-gray-500 mb-2">Pesan & Doa</label>
                                     <textarea 
                                         required 
                                         rows="4"
                                         value={data.message}
                                         onChange={e => setData('message', e.target.value)}
-                                        className="w-full bg-transparent border-0 border-b border-gray-200 focus:border-[#111] focus:ring-0 px-0 py-2 text-sm transition-colors rounded-none resize-none placeholder-gray-300" 
+                                        className="w-full bg-transparent border-0 border-b border-[#333] focus:border-white focus:ring-0 px-0 py-2 text-sm transition-colors rounded-none resize-none placeholder-gray-600 text-white" 
                                         placeholder="Berikan ucapan terbaik Anda..."
                                     ></textarea>
                                 </div>
@@ -522,33 +522,33 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                                 <button 
                                     type="submit" 
                                     disabled={processing}
-                                    className="w-full bg-[#111] text-white py-4 uppercase tracking-[0.2em] text-[10px] font-semibold hover:bg-black transition-colors disabled:opacity-50 mt-4"
+                                    className="w-full bg-white text-black py-4 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-gray-200 transition-colors disabled:opacity-50 mt-4"
                                 >
                                     {processing ? 'Mengirim...' : 'Kirim Konfirmasi'}
                                 </button>
                             </div>
                         </form>
                     ) : (
-                        <div className="bg-white border border-gray-100 p-16 text-center fade-up opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out delay-100 shadow-sm">
-                            <h4 className="text-xl font-serif uppercase tracking-widest mb-4 font-light text-[#111]">Terima Kasih</h4>
-                            <p className="text-[13px] font-light text-gray-500 leading-relaxed">Konfirmasi kehadiran dan ucapan Anda telah kami terima.</p>
+                        <div className="bg-[#0a0a0a] border border-[#222] p-16 text-center fade-up opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out delay-100 shadow-lg">
+                            <h4 className="text-xl font-serif uppercase tracking-widest mb-4 font-light text-white">Terima Kasih</h4>
+                            <p className="text-[13px] font-light text-gray-400 leading-relaxed">Konfirmasi kehadiran dan ucapan Anda telah kami terima.</p>
                         </div>
                     )}
                 </div>
             </section>
 
             {/* Footer */}
-            <footer className="bg-white text-[#111] py-20 text-center border-t border-gray-100 relative z-10">
+            <footer className="bg-black text-white py-20 text-center border-t border-[#222] relative z-10">
                 <div className="mb-8">
                     <h2 className="text-2xl font-serif uppercase tracking-widest font-light">
-                        {content?.groom_nickname || 'G'} <span className="text-gray-300 mx-2">&</span> {content?.bride_nickname || 'B'}
+                        {content?.groom_nickname || 'G'} <span className="text-gray-600 mx-2">&</span> {content?.bride_nickname || 'B'}
                     </h2>
                 </div>
-                <p className="text-[9px] uppercase tracking-[0.4em] text-gray-400 mb-2">
-                    Created with <span className="font-bold text-[#111]">BEYOND HORIZON</span>
+                <p className="text-[9px] uppercase tracking-[0.4em] text-gray-500 mb-2">
+                    Created with <span className="font-bold text-white">BEYOND HORIZON</span>
                 </p>
-                <p className="text-[9px] uppercase tracking-[0.4em] text-gray-400">
-                    Developed by <a href="https://instagram.com/f_haikal02" target="_blank" rel="noreferrer" className="font-bold text-[#111] hover:text-gray-600 transition-colors">Fiqri Haikal</a>
+                <p className="text-[9px] uppercase tracking-[0.4em] text-gray-500">
+                    Developed by <a href="https://instagram.com/f_haikal02" target="_blank" rel="noreferrer" className="font-bold text-white hover:text-gray-300 transition-colors">Fiqri Haikal</a>
                 </p>
             </footer>
         </div>
