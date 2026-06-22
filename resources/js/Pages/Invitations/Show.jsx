@@ -1,6 +1,7 @@
 import { Head, useForm } from '@inertiajs/react';
 import { useEffect, useState, useRef, useMemo } from 'react';
 import RpgTouringInvitation from './RpgTouringInvitation';
+import SyukuranPremiumInvitation from './SyukuranPremiumInvitation';
 function TiltCard({ children, className = '', style = {}, themeColor }) {
     const [coords, setCoords] = useState({ x: 0, y: 0 });
     const [isHovered, setIsHovered] = useState(false);
@@ -167,6 +168,9 @@ export default function Show({ invitation, guest }) {
 
     if (themeId === 'rpg-touring') {
         return <RpgTouringInvitation invitation={invitation} guest={guest} />;
+    }
+    if (themeId === 'syukuran-pernikahan-premium') {
+        return <SyukuranPremiumInvitation invitation={invitation} guest={guest} />;
     }
     const isCinemaTheme = themeId === 'monochrome-3d-cinema';
     const isLuxuryTheme = themeId === 'luxury-wedding';
@@ -684,7 +688,7 @@ export default function Show({ invitation, guest }) {
             );
         }
         return (
-            <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-start md:justify-center text-center p-6 transition-all duration-1000 overflow-y-auto pt-16 pb-6 md:py-8 ${isCinemaTheme ? 'bg-black text-white font-serif' : (is3DTheme ? (isDark ? 'bg-slate-950 text-white' : 'bg-slate-50 text-slate-900') : (isDark ? 'bg-slate-950 text-white' : 'bg-[#FAF6F0] text-navy'))}`}>
+            <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-start md:justify-center text-center p-6 transition-all duration-1000 overflow-y-auto pt-16 pb-6 md:py-8 ${isCinemaTheme ? 'bg-black text-white font-serif' : (is3DTheme ? (isDark ? 'bg-slate-950 text-white' : 'bg-slate-50 text-slate-900') : (isDark ? 'bg-slate-950 text-white' : 'bg-[#FAF6F0] text-navy'))} ${isOpening ? 'scale-[1.5] opacity-0 blur-xl pointer-events-none' : 'scale-100 opacity-100'}`}>
                 <Head title={invitation.title}>
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />

@@ -118,6 +118,14 @@ class InvitationController extends Controller
                 'preview' => '/images/themes/modern.png',
                 'category' => 'syukuran',
                 'description' => 'Desain elegan untuk acara syukuran.'
+            ],
+            // Syukuran Premium
+            [
+                'id' => 'syukuran-pernikahan-premium',
+                'name' => 'Syukuran Pernikahan Premium',
+                'preview' => '/images/themes/modern.png',
+                'category' => 'syukuran',
+                'description' => 'Tema premium bernuansa monokrom elegan dengan desain sudut lancip, menggunakan icon profesional.'
             ]
         ];
         return Inertia::render('Invitations/Create', [
