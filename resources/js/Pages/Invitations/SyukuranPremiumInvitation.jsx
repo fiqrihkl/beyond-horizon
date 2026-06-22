@@ -376,7 +376,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                             
                             <div className="w-full flex flex-col gap-4">
                                 <a 
-                                    href={`https://maps.google.com/?q=${content?.event_lat || '-6.200000'},${content?.event_lng || '106.816666'}`}
+                                    href={content?.events?.[0]?.map_url || content?.event_map_url || `https://maps.google.com/?q=${content?.event_lat || '-6.200000'},${content?.event_lng || '106.816666'}`}
                                     target="_blank" rel="noreferrer"
                                     className="flex items-center justify-center gap-3 bg-white text-[#111] py-4 uppercase tracking-[0.2em] text-[10px] font-semibold hover:bg-gray-200 transition-colors"
                                 >
