@@ -182,7 +182,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
             <div className="absolute inset-0 pointer-events-none opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] mix-blend-multiply z-0"></div>
             
             <div className="flex-1 flex flex-col items-center justify-center text-center space-y-10 relative z-10 max-w-sm w-full mx-auto">
-                <div className="uppercase tracking-[0.4em] text-[10px] text-gray-500 font-light pb-2 px-4 border-b border-gray-300">
+                <div className="uppercase tracking-[0.3em] text-sm md:text-base text-[#111] font-bold pb-3 px-6 border-b-2 border-[#111]">
                     Syukuran Pernikahan
                 </div>
                 
@@ -274,7 +274,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                 </div>
 
                 <div className="text-center max-w-3xl mx-auto flex flex-col items-center fade-up opacity-0 translate-y-12 transition-all duration-[1500ms] ease-out">
-                    <span className="uppercase tracking-[0.4em] text-[10px] md:text-xs mb-10 border-b border-white/30 pb-2 px-8 text-white/80 font-light">
+                    <span className="uppercase tracking-[0.3em] text-sm md:text-base mb-10 border-b-2 border-white/50 pb-3 px-8 text-white font-bold drop-shadow-md">
                         Syukuran Pernikahan
                     </span>
                     
@@ -538,17 +538,17 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
             </section>
 
             {/* Footer */}
-            <footer className="bg-black text-white py-20 text-center border-t border-[#222] relative z-10">
+            <footer className="bg-gray-800 text-white py-20 text-center border-t border-gray-700 relative z-10">
                 <div className="mb-8">
-                    <h2 className="text-2xl font-serif uppercase tracking-widest font-light">
-                        {content?.groom_nickname || 'G'} <span className="text-gray-600 mx-2">&</span> {content?.bride_nickname || 'B'}
+                    <h2 className="text-3xl font-serif uppercase tracking-widest font-light">
+                        {content?.groom_nickname || 'G'} <span className="text-gray-500 mx-2">&</span> {content?.bride_nickname || 'B'}
                     </h2>
                 </div>
-                <p className="text-[9px] uppercase tracking-[0.4em] text-gray-500 mb-2">
+                <p className="text-xs uppercase tracking-[0.3em] text-gray-300 mb-3">
                     Created with <span className="font-bold text-white">BEYOND HORIZON</span>
                 </p>
-                <p className="text-[9px] uppercase tracking-[0.4em] text-gray-500">
-                    Developed by <a href="https://instagram.com/f_haikal02" target="_blank" rel="noreferrer" className="font-bold text-white hover:text-gray-300 transition-colors">Fiqri Haikal</a>
+                <p className="text-xs uppercase tracking-[0.3em] text-gray-300">
+                    Developed by <a href="https://instagram.com/f_haikal02" target="_blank" rel="noreferrer" className="font-bold text-white hover:text-gray-100 transition-colors">Fiqri Haikal</a>
                 </p>
             </footer>
         </div>
