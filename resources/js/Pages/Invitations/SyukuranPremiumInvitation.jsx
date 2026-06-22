@@ -63,6 +63,16 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
     const mainEventLocation = content?.events?.[0]?.location || content?.event_location || 'Gedung Serbaguna';
     const mainEventAddress = content?.events?.[0]?.address || content?.event_address || 'Jl. Jenderal Sudirman No. 1, Jakarta';
     const mainEventTime = content?.events?.[0]?.time || content?.event_time || '10:00 - Selesai';
+    const getMapUrl = () => {
+        let url = content?.events?.[0]?.map_url || content?.event_map_url;
+        if (url) {
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                return `https://${url}`;
+            }
+            return url;
+        }
+        return `https://maps.google.com/?q=${content?.events?.[0]?.lat || content?.event_lat || '-6.200000'},${content?.events?.[0]?.lng || content?.event_lng || '106.816666'}`;
+    };
     const musicUrl = invitation.music_url || "https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3";
     let gallery = invitation.gallery && invitation.gallery.length > 0 ? invitation.gallery : [
         "https://placehold.co/600x800/eaeaea/a0a0a0?font=playfair-display&text=Momen+Bahagia+1",
@@ -376,7 +386,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                             
                             <div className="w-full flex flex-col gap-4">
                                 <a 
-                                    href={content?.events?.[0]?.map_url || content?.event_map_url || `https://maps.google.com/?q=${content?.event_lat || '-6.200000'},${content?.event_lng || '106.816666'}`}
+                                    href={getMapUrl()}
                                     target="_blank" rel="noreferrer"
                                     className="flex items-center justify-center gap-3 bg-white text-[#111] py-4 uppercase tracking-[0.2em] text-[10px] font-semibold hover:bg-gray-200 transition-colors"
                                 >
