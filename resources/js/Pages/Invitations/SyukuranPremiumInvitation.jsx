@@ -264,34 +264,34 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
             {/* Hero Section */}
             <section className="min-h-[100vh] flex flex-col justify-center items-center relative p-6 md:p-12 z-10 overflow-hidden">
                 {/* Hero Background */}
-                <div className="absolute inset-0 z-[-1]">
+                <div className="absolute inset-0 z-[-1] bg-black">
                     <img 
                         src={content?.hero_image ? `/storage/${content?.hero_image}` : (cover_image ? `/storage/${cover_image}` : "https://placehold.co/1920x1080/eaeaea/a0a0a0?font=playfair-display&text=Foto+Latar+Hero")}
-                        className="w-full h-full object-cover opacity-15"
+                        className="w-full h-full object-cover opacity-60"
                         alt="Hero Background"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA]/50 via-[#FAFAFA]/80 to-[#FAFAFA]"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#FAFAFA]"></div>
                 </div>
 
                 <div className="text-center max-w-3xl mx-auto flex flex-col items-center fade-up opacity-0 translate-y-12 transition-all duration-[1500ms] ease-out">
-                    <span className="uppercase tracking-[0.4em] text-[10px] md:text-xs mb-10 border-b border-gray-300 pb-2 px-8 text-gray-500 font-light">
+                    <span className="uppercase tracking-[0.4em] text-[10px] md:text-xs mb-10 border-b border-white/30 pb-2 px-8 text-white/80 font-light">
                         Syukuran Pernikahan
                     </span>
                     
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-widest mb-10 leading-[1.2]">
-                        <span className="block font-light">{content?.groom_nickname || 'Groom'}</span>
-                        <span className="block text-2xl md:text-4xl font-sans font-extralight my-6 text-gray-400 italic">&</span>
-                        <span className="block font-light">{content?.bride_nickname || 'Bride'}</span>
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-widest mb-10 leading-[1.2] text-white">
+                        <span className="block font-light drop-shadow-lg">{content?.groom_nickname || 'Groom'}</span>
+                        <span className="block text-2xl md:text-4xl font-sans font-extralight my-6 text-white/60 italic">&</span>
+                        <span className="block font-light drop-shadow-lg">{content?.bride_nickname || 'Bride'}</span>
                     </h1>
                     
-                    <p className="text-[10px] md:text-xs tracking-[0.4em] uppercase text-gray-500">
+                    <p className="text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/80">
                         {new Date(mainEventDate).toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
                     </p>
                 </div>
                 
                 <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 opacity-60">
-                    <span className="text-[8px] uppercase tracking-[0.3em] text-gray-400">Scroll</span>
-                    <div className="w-[1px] h-16 bg-gradient-to-b from-gray-400 to-transparent"></div>
+                    <span className="text-[8px] uppercase tracking-[0.3em] text-white/70">Scroll</span>
+                    <div className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
                 </div>
             </section>
 
