@@ -174,7 +174,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                 <img 
                     src={cover_image ? `/storage/${cover_image}` : "https://placehold.co/1080x1920/eaeaea/a0a0a0?font=playfair-display&text=Foto+Cover"}
                     alt="Cover Background"
-                    className="w-full h-full object-cover grayscale opacity-30 blur-lg scale-110"
+                    className="w-full h-full object-cover opacity-30 blur-lg scale-110"
                 />
                 <div className="absolute inset-0 bg-white/60"></div>
             </div>
@@ -190,7 +190,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                     <img 
                         src={cover_image ? `/storage/${cover_image}` : "https://placehold.co/600x800/eaeaea/a0a0a0?font=playfair-display&text=Foto+Cover"} 
                         alt="Cover" 
-                        className="w-full h-full object-cover grayscale brightness-110 contrast-90"
+                        className="w-full h-full object-cover brightness-110 contrast-90"
                     />
                 </div>
                 
@@ -267,7 +267,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                 <div className="absolute inset-0 z-[-1]">
                     <img 
                         src={content?.hero_image ? `/storage/${content?.hero_image}` : (cover_image ? `/storage/${cover_image}` : "https://placehold.co/1920x1080/eaeaea/a0a0a0?font=playfair-display&text=Foto+Latar+Hero")}
-                        className="w-full h-full object-cover opacity-15 grayscale"
+                        className="w-full h-full object-cover opacity-15"
                         alt="Hero Background"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA]/50 via-[#FAFAFA]/80 to-[#FAFAFA]"></div>
@@ -311,7 +311,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                     <div className="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-24">
                         <div className="flex flex-col items-center text-center fade-up opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out delay-100">
                             <div className="w-56 h-72 md:w-64 md:h-80 bg-gray-50 p-2 shadow-xl mb-8 transform -rotate-2 hover:rotate-0 transition-transform duration-700 ease-out">
-                                <img src={content?.groom_photo ? `/storage/${content?.groom_photo}` : "https://placehold.co/600x800/eaeaea/a0a0a0?font=playfair-display&text=Foto+Pria"} alt="Groom" className="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 transition-opacity duration-500" />
+                                <img src={content?.groom_photo ? `/storage/${content?.groom_photo}` : "https://placehold.co/600x800/eaeaea/a0a0a0?font=playfair-display&text=Foto+Pria"} alt="Groom" className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500" />
                             </div>
                             <h2 className="text-2xl md:text-3xl font-serif uppercase tracking-widest mb-3 font-light">{content?.groom_name || 'Nama Pria'}</h2>
                             <p className="text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-1">Putra dari</p>
@@ -322,7 +322,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                         
                         <div className="flex flex-col items-center text-center fade-up opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out delay-300">
                             <div className="w-56 h-72 md:w-64 md:h-80 bg-gray-50 p-2 shadow-xl mb-8 transform rotate-2 hover:rotate-0 transition-transform duration-700 ease-out">
-                                <img src={content?.bride_photo ? `/storage/${content?.bride_photo}` : "https://placehold.co/600x800/eaeaea/a0a0a0?font=playfair-display&text=Foto+Wanita"} alt="Bride" className="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 transition-opacity duration-500" />
+                                <img src={content?.bride_photo ? `/storage/${content?.bride_photo}` : "https://placehold.co/600x800/eaeaea/a0a0a0?font=playfair-display&text=Foto+Wanita"} alt="Bride" className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500" />
                             </div>
                             <h2 className="text-2xl md:text-3xl font-serif uppercase tracking-widest mb-3 font-light">{content?.bride_name || 'Nama Wanita'}</h2>
                             <p className="text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-1">Putri dari</p>
@@ -411,7 +411,7 @@ export default function SyukuranPremiumInvitation({ invitation, guest }) {
                             {gallery.slice(0, 8).map((img, idx) => (
                                 <div key={idx} className={`fade-up opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out bg-gray-50 p-2 shadow-sm ${idx % 2 !== 0 ? 'mt-8 md:mt-12' : ''}`} style={{ transitionDelay: `${idx * 100}ms` }}>
                                     <div className="aspect-[3/4] overflow-hidden">
-                                        <img src={img.startsWith('http') ? img : `/storage/${img}`} alt={`Gallery ${idx+1}`} className="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 transition-all duration-700 hover:scale-105" />
+                                        <img src={img.startsWith('http') ? img : `/storage/${img}`} alt={`Gallery ${idx+1}`} className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-all duration-700 hover:scale-105" />
                                     </div>
                                 </div>
                             ))}
