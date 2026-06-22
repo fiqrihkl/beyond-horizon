@@ -131,8 +131,9 @@ export default function Editor({ auth, theme, categories, invitation, musicLibra
     const [childPhotoPreview, setChildPhotoPreview] = useState(invitation?.content?.child_photo ? `/storage/${invitation.content.child_photo}` : null);
     const [characterImagePreview, setCharacterImagePreview] = useState(invitation?.content?.character_image ? `/storage/${invitation.content.character_image}` : null);
     const [loveStoryImagePreview, setLoveStoryImagePreview] = useState(invitation?.content?.love_story_image ? `/storage/${invitation.content.love_story_image}` : null);
-    const selectedCategory = categories.find(c => String(c.id) === String(data.event_category_id));
+    const selectedCategory = categories.find(c => c.id === parseInt(data.event_category_id));
     const catSlug = selectedCategory ? selectedCategory.slug.toLowerCase() : 'pernikahan';
+    const isPernikahanOrSyukuran = catSlug === 'pernikahan' || catSlug === 'syukuran';
     const isCinemaTheme = selectedThemeId === 'monochrome-3d-cinema';
     const themeColor = isCinemaTheme ? '#D4AF37' : (data.theme_config.accent_color || '#F48C06');
     // File Preview Helpers
@@ -322,8 +323,8 @@ export default function Editor({ auth, theme, categories, invitation, musicLibra
                     <div className="flex gap-4 mb-8 overflow-x-auto border-b border-slate-100 dark:border-slate-700 pb-4 scrollbar-none">
                         {[
                             { id: 'info', label: 'Informasi' },
-                            { id: 'mempelai', label: catSlug === 'pernikahan' ? 'Mempelai' : 'Penerima' },
-                            { id: 'kisah', label: catSlug === 'pernikahan' ? 'Kisah Cinta' : 'Agenda' },
+                            { id: 'mempelai', label: isPernikahanOrSyukuran ? 'Mempelai' : 'Penerima' },
+                            { id: 'kisah', label: isPernikahanOrSyukuran ? 'Kisah Cinta' : 'Agenda' },
                             { id: 'doa', label: 'Doa/Harapan' },
                             { id: 'acara', label: 'Acara & Peta' },
                             { id: 'galeri', label: 'Galeri & Kado' }
@@ -496,7 +497,7 @@ export default function Editor({ auth, theme, categories, invitation, musicLibra
                                         </div>
                                     </div>
                                 )}
-                                {catSlug === 'pernikahan' ? (
+                                {isPernikahanOrSyukuran ? (
                                     <>
                                         {/* MEMPELAI WANITA */}
                                         <div className="space-y-4 p-6 bg-slate-50 dark:bg-slate-900 rounded-[1.5rem]">
@@ -666,7 +667,7 @@ export default function Editor({ auth, theme, categories, invitation, musicLibra
                             <div className="space-y-6 animate-in slide-in-from-left duration-300">
                                 <div className="flex justify-between items-center bg-slate-50 dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
                                     <h4 className="font-extrabold text-navy dark:text-white text-sm">
-                                        Gunakan Fitur {catSlug === 'pernikahan' ? 'Kisah Cinta' : 'Agenda'}
+                                        Gunakan Fitur {isPernikahanOrSyukuran ? 'Kisah Cinta' : 'Agenda'}
                                     </h4>
                                     <input
                                         type="checkbox"
@@ -678,7 +679,7 @@ export default function Editor({ auth, theme, categories, invitation, musicLibra
                                 {data.content.enable_love_story !== false && (
                                     <>
                                         <div className="border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
-                                            <h4 className="font-extrabold text-navy dark:text-white text-md mb-4">Media {catSlug === 'pernikahan' ? 'Kisah Cinta' : 'Agenda'}</h4>
+                                            <h4 className="font-extrabold text-navy dark:text-white text-md mb-4">Media {isPernikahanOrSyukuran ? 'Kisah Cinta' : 'Agenda'}</h4>
                                             <div className="flex gap-4 mb-3">
                                                 <label className="flex items-center gap-2 text-xs font-bold text-slate cursor-pointer">
                                                     <input
@@ -732,7 +733,7 @@ export default function Editor({ auth, theme, categories, invitation, musicLibra
                                         </div>
                                         <div className="flex justify-between items-center mb-4">
                                             <h4 className="font-extrabold text-navy dark:text-white text-lg">
-                                                Daftar {catSlug === 'pernikahan' ? 'Cerita' : 'Agenda'}
+                                                Daftar {isPernikahanOrSyukuran ? 'Cerita' : 'Agenda'}
                                             </h4>
                                             <button
                                                 type="button"
@@ -806,7 +807,7 @@ export default function Editor({ auth, theme, categories, invitation, musicLibra
                                         rows="3"
                                     ></textarea>
                                 </div>
-                                {catSlug === 'pernikahan' && (
+                                {isPernikahanOrSyukuran && (
                                     <div>
                                         <label className="block text-xs font-bold text-slate uppercase mb-1">Doa / Harapan Wanita</label>
                                         <textarea
@@ -1141,7 +1142,7 @@ export default function Editor({ auth, theme, categories, invitation, musicLibra
                                 </div>
                                 <div className="w-12 h-1 mx-auto rounded-full" style={{ backgroundColor: themeColor }}></div>
                                 {/* NAMES SHOWCASE */}
-                                {catSlug === 'pernikahan' ? (
+                                {isPernikahanOrSyukuran ? (
                                     <div className="space-y-4">
                                         <div className="flex flex-col items-center">
                                             {bridePhotoPreview ? (
@@ -1202,7 +1203,7 @@ export default function Editor({ auth, theme, categories, invitation, musicLibra
                                 {/* LOVE STORY */}
                                 {data.content.love_stories.length > 0 && (
                                     <div className="text-left space-y-4">
-                                        <h5 className="font-bold text-[10px] uppercase tracking-wider text-slate text-center">{catSlug === 'pernikahan' ? 'Kisah Cinta Kami' : 'Agenda Acara'}</h5>
+                                        <h5 className="font-bold text-[10px] uppercase tracking-wider text-slate text-center">{isPernikahanOrSyukuran ? 'Kisah Cinta Kami' : 'Agenda Acara'}</h5>
                                         <div className="border-l border-slate-200 dark:border-slate-800 pl-4 ml-2 space-y-4">
                                             {data.content.love_stories.map((story, i) => (
                                                 <div key={i} className="relative">
